@@ -1,7 +1,10 @@
-const { Launch: launchModel } = require('../models/launchSchema')
+const Launch = require('../models/launchSchema')
 
-const launchController = {
 
+const getAllLaunches = async () => {
+    return await Launch.find();
 }
 
-module.exports = launchController
+module.exports = {
+    getAllLaunches
+}
