@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const linksSchema = require("./LinksSchema")
 const coresSchema = require("./coresSchema");
+//const paginate = require("mongoose-paginate-v2")
 
 const launchSchema = new mongoose.Schema({
     fairings: Object,
@@ -29,7 +30,10 @@ const launchSchema = new mongoose.Schema({
     upcoming: Boolean,
     cores: [coresSchema],
     id: String,
+    rocketName: Object,
 });
+
+//launchSchema.plugin(paginate)
 
 const Launch = mongoose.model('Launch', launchSchema);
 

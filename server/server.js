@@ -7,10 +7,10 @@ const cron = require('node-cron');
 const fetchLaunchedData = require('./api/fetchData');
 const routes = require('./routes/router');
 
-cron.schedule("0 9 * * *", fetchLaunchedData, {
-    scheduled: true,
-    timezone: "America/Sao_Paulo"
-});
+// cron.schedule("0 9 * * *", fetchLaunchedData, {
+//     scheduled: true,
+//     timezone: "America/Sao_Paulo"
+// });
 
 server.use(cors());
 server.use(express.json());
@@ -21,6 +21,6 @@ conn();
 
 server.use('/', routes);
 
-server.listen(process.env.PORT, function() {
+server.listen(process.env.PORT, function () {
     console.log("Server on");
 })
